@@ -32,8 +32,10 @@ def run_mathematical_example() -> None:
 
     res = calculate_chsh(e_ab, e_ab_prime, e_a_prime_b, e_a_prime_b_prime)
 
-    print(f"Correlations: E(a,b)={e_ab:.4f}, E(a,b')={e_ab_prime:.4f}, "
-          f"E(a',b)={e_a_prime_b:.4f}, E(a',b')={e_a_prime_b_prime:.4f}")
+    print(
+        f"Correlations: E(a,b)={e_ab:.4f}, E(a,b')={e_ab_prime:.4f}, "
+        f"E(a',b)={e_a_prime_b:.4f}, E(a',b')={e_a_prime_b_prime:.4f}"
+    )
     print(f"Calculated CHSH Parameter S: {res['s_value']:.4f}")
     print(f"Classical Bound |S| <= {res['classical_bound']}")
     print(f"Tsirelson Bound  |S| <= {res['tsirelson_bound']:.4f}")
@@ -91,8 +93,10 @@ def run_simulated_quantum_experiment() -> None:
         sampled_correlations[key_name] = e_sampled
 
         print(f"Setting ({name_a}, {name_b}): theta_A={theta_a:.2f}, theta_B={theta_b:+.2f}")
-        print(f"  Exact Probabilities: P(00)={p00:.4f}, P(11)={p11:.4f}, "
-              f"P(01)={p01:.4f}, P(10)={p10:.4f}")
+        print(
+            f"  Exact Probabilities: P(00)={p00:.4f}, P(11)={p11:.4f}, "
+            f"P(01)={p01:.4f}, P(10)={p10:.4f}"
+        )
         print(f"  Exact E = {e_exact:+.6f} | Sampled (10k shots) E = {e_sampled:+.6f}\n")
 
     # Evaluate CHSH S parameters
@@ -115,7 +119,7 @@ def run_simulated_quantum_experiment() -> None:
     print("--------------------------------------------------")
     print(f"Exact Quantum CHSH Parameter S: {exact_chsh['s_value']:.12f}")
     print(f"  Tsirelson Bound (2*sqrt(2)):   {TSIRELSON_CHSH_BOUND:.12f}")
-    is_exact_match = abs(exact_chsh['s_value'] - TSIRELSON_CHSH_BOUND) < 1e-12
+    is_exact_match = abs(exact_chsh["s_value"] - TSIRELSON_CHSH_BOUND) < 1e-12
     print(f"  Exact Match?                   {is_exact_match}")
     print(f"Sampled Quantum CHSH Parameter S:{sampled_chsh['s_value']:.6f}")
     print(f"  Violates Classical Bound (|S|>2)? {exact_chsh['violates_classical_bound']}\n")

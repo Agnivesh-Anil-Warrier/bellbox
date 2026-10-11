@@ -462,5 +462,3 @@ class TestMeasureInBasis:
         qc_measured = measure_in_basis(qc, "Z")
         with pytest.raises(ValueError, match="already contains measurement operations"):
             measure_in_basis(qc_measured, "X")
-
-

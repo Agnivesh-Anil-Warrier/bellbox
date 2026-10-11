@@ -86,9 +86,7 @@ def calculate_chsh(
             raise ValueError(f"Correlation {name!r} must be a finite number, got {val}.")
 
         if val_float < (-1.0 - atol) or val_float > (1.0 + atol):
-            raise ValueError(
-                f"Correlation {name!r} must be within range [-1.0, 1.0], got {val}."
-            )
+            raise ValueError(f"Correlation {name!r} must be within range [-1.0, 1.0], got {val}.")
 
     s_val = float(e_ab) + float(e_ab_prime) + float(e_a_prime_b) - float(e_a_prime_b_prime)
     abs_s_val = abs(s_val)

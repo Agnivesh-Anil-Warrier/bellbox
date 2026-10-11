@@ -38,5 +38,3 @@ __all__ = [
     "has_measurements",
     "validate_circuit",
 ]
-
-

@@ -113,7 +113,6 @@ def counts_to_probabilities(counts: Mapping[str, int]) -> dict[str, float]:
     return analysis["probabilities"]
 
 
-
 def is_normalized(
     probabilities: Mapping[str, float],
     atol: float = 1e-6,
@@ -352,9 +351,7 @@ def measure_in_basis(
                 )
             elem_str = elem.strip().upper()
             if len(elem_str) != 1:
-                raise ValueError(
-                    f"Each basis element must be a single character, got {elem!r}."
-                )
+                raise ValueError(f"Each basis element must be a single character, got {elem!r}.")
             normalized_bases.append(elem_str)
         bases = tuple(normalized_bases)
     else:
@@ -384,5 +381,3 @@ def measure_in_basis(
             target_qc.measure(qubit_idx, qubit_idx)
 
     return target_qc
-
-
