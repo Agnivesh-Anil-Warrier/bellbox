@@ -1,4 +1,5 @@
 """BellBox: Quantum circuit experiments and educational tools."""
+from importlib.metadata import PackageNotFoundError, version
 
 from bellbox.chsh import (
     CLASSICAL_CHSH_BOUND,
@@ -18,8 +19,6 @@ from bellbox.validation import (
     validate_circuit,
     validate_qubit_count,
 )
-
-from importlib.metadata import PackageNotFoundError, version
 
 try:
     __version__ = version("bellbox")
